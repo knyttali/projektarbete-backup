@@ -7,8 +7,8 @@ import sti.aaj.domain.Vault;
 
 public interface StiService {
 
-    Course createCourse();
-    Teacher createTeacher();
-    Student createStudent();
+    Course createCourse(int yhPoints , Teacher teacher, int courseId, int hours);
+    Teacher createTeacher(String name, String surname, int id, int salary);
+    Student fillStudentList();
 
 }
