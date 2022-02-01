@@ -5,7 +5,7 @@
                 http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <bean id="service" class="sti.aaj.service.StiService" />
+        <bean id="service" class="sti.aaj.service.StiService" abstract="true"/>
 
 
 

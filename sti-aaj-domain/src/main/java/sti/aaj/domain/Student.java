@@ -1,22 +1,20 @@
 package sti.aaj.domain;
 
-import java.util.ArrayList;
-
 public class Student extends Person{
 
     private String name;
     private String surname;
-    private int id;
+    private String course;
 
-    public Student(String name, String surname, int id) {
+    public Student(String name, String surname, String course) {
 
         this.name = name;
         this.surname = surname;
-        this.id = id;
+        this.course = course;
     }
 
     public String toString(){
-        return name + " " + surname + " " + id;
+        return name + " " + surname + " " + course;
     }
     
 }

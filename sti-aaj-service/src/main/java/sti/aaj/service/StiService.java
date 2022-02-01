@@ -1,9 +1,14 @@
 package sti.aaj.service;
 
+import sti.aaj.domain.Course;
 import sti.aaj.domain.Student;
-
-import java.util.List;
+import sti.aaj.domain.Teacher;
+import sti.aaj.domain.Vault;
 
 public interface StiService {
-    public List<Student> getStudents(String name);
+
+    Course createCourse();
+    Teacher createTeacher();
+    Student createStudent();
+
 }
