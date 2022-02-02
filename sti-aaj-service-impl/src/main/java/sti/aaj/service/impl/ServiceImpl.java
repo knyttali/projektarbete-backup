@@ -7,9 +7,6 @@ import sti.aaj.domain.Teacher;
 import sti.aaj.domain.Vault;
 import sti.aaj.service.StiService;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 public class ServiceImpl implements StiService {
 
     private static Vault vault;
@@ -43,8 +40,8 @@ public class ServiceImpl implements StiService {
     }
 
     @Override
-    public void addCourse(int courseId) {
-        Student.setCourse(courseId);
+    public void addCourse(Student student, int courseId) {
+        student.setCourse(courseId);
     }
 
 }
