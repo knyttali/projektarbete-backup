@@ -1,18 +1,16 @@
 package sti.aaj.domain;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Vault {
-    private static ArrayList<Course> courses = new ArrayList<>();
+    private static Map<Integer, Course> courses = new HashMap();
     private static Map<Integer, Student> students = new HashMap();
 
 
-    public static boolean createCourse(Course course){
+    public static Course createCourse(int courseId, Course course){
 
-        return courses.add(course);
+        return courses.put(courseId, course);
     }
 
     public static Student createStudent(int id, Student student) {
@@ -23,5 +21,10 @@ public class Vault {
     public static Student getStudent(int id) {
 
         return students.get(id);
+    }
+
+    public static Course getCourse(int courseId) {
+
+        return courses.get(courseId);
     }
 }

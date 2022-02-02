@@ -11,15 +11,14 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class ServiceImpl implements StiService {
-    private static ArrayList<Course> courses;
-    private static Map<Integer, Student> students;
+
     private static Vault vault;
 
     public Course createCourse(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
 
 
         Course course =  new Course("Tyska", yhPoints, teacher, courseId, hours);
-        vault.createCourse(course);
+        vault.createCourse(courseId, course);
 
         return course;
     }
@@ -42,4 +41,10 @@ public class ServiceImpl implements StiService {
 
         return student;
     }
+
+    @Override
+    public void addCourse(int courseId) {
+        Student.setCourse(courseId);
+    }
+
 }

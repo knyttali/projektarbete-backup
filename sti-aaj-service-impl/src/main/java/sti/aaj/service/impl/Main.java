@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         stiService.createCourse("Tyska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 50);
-        stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2030, 40);
+        stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 3030, 40);
         stiService.createCourse("Engelska", 15, new Teacher("Özgur", "Kibar", 567890, 10), 1010, 55);
 
         Scanner scan = new Scanner(System.in);
@@ -47,16 +47,21 @@ public class Main {
     private static void getStudent(int id) {
 
         Scanner scan = new Scanner(System.in);
-        stiService.getStudent(id);
+
+        System.out.println(stiService.getStudent(id));
         System.out.println("1. Lägg till kurs. ");
         System.out.println("2. Ta bort kurs. ");
+
         int input = scan.nextInt();
 
         if(input == 1){
-
+            System.out.println("Lägg till kurs ID(1010, 2020 eller 3030): ");
+            int courseId = scan.nextInt();
+            stiService.addCourse(courseId);
         }
         if(input == 2){
-
+            System.out.println("Ta bort kurs ID(1010, 2020 eller 3030): ");
+            int courseId = scan.nextInt();
         }
     }
 
@@ -73,7 +78,7 @@ public class Main {
         System.out.println("Skriv efternamn: ");
         String surname = scan.next();
 
-        System.out.println("Skriv kurs ID: ");
+        System.out.println("Skriv kurs ID(1010, 2020 eller 3030): ");
         int courseId = scan.nextInt();
 
         stiService.createStudent(id, name, surname, courseId);

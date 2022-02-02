@@ -17,9 +17,12 @@ public class Student extends Person{
         this.surname = surname;
         this.id = id;
         this.courseId = courseId;
+
+        setCourse(courseId);
     }
 
-    public Course setCourse(int courseId){
+    public void setCourse(int courseId){
+        courses.add(Vault.getCourse(courseId));
     }
 
     public String toString() {
