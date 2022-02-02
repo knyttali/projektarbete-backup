@@ -6,20 +6,20 @@ public class Course {
     private Teacher teacher;
     private int courseId;
     private int hours;
-    private String kursNamn;
+    private String courseName;
 
 
-    public Course(String kursNamn, int yhPoints, Teacher teacher, int courseId, int hours) {
+    public Course(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
 
-        setKursNamn(kursNamn);
+        setcourseName(courseName);
         setCourseId(courseId);
         setHours(hours);
         setTeacher(teacher);
         setYhPoints(yhPoints);
     }
 
-    private void setKursNamn(String kursNamn) {
-        this.kursNamn = kursNamn;
+    private void setcourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public void setCourseId(int courseId) {
@@ -38,28 +38,12 @@ public class Course {
         this.yhPoints = yhPoints;
     }
 
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public int getYhPoints() {
-        return yhPoints;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public String getKursNamn() {
-        return kursNamn;
+    public String getCourseName() {
+        return courseName;
     }
 
     public String toString(){
-        return "\n" + " Kurs namn: " + kursNamn + " Kurs ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getName() + " Timmar " + hours;
+        return "\n" + " course Name: " + courseName + " course ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getName() + " Timmar " + hours;
     }
 
 }

@@ -6,22 +6,24 @@ public class Student extends Person{
 
     private String name;
     private String surname;
-    private ArrayList<Course> courses; //Gör detta till en lista. Man ska kunna ta undan och lägga till kurser.
+    private int id;
+    private ArrayList<Course> courses;
+    private int courseId;
 
-    public Student(String name, String surname, int personnummer, ArrayList<Course> courses) {
+    public Student(String name, String surname, int id, int courseId) {
 
         this.name = name;
         this.surname = surname;
-        this.courses = courses;
+        this.id = id;
+        this.courseId = courseId;
     }
 
-    public String toString(){
-        StringBuilder kursNamn = new StringBuilder("");
-        for (Course course: courses) {
-            kursNamn.append( course.getKursNamn()).append(",");
+    public String toString() {
+        StringBuilder courseName = new StringBuilder("");
+        for (Course course : courses) {
+            courseName.append(course.getCourseName()).append(",");
 
         }
-        return name + " " + surname + " " + kursNamn + "\n";
+        return name + " " + surname + " " + courseName + "\n";
     }
-    
 }

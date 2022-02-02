@@ -5,6 +5,6 @@
                 http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <bean id="service" class="sti.aaj.service.StiService" abstract="true"/>
+        <bean id="service" class="sti.aaj.service.impl.ServiceImpl"/>
 
 </beans>
