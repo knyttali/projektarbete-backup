@@ -49,7 +49,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Student student = stiService.getStudent(id);
         System.out.println(student);
-        System.out.println("1. Lägg till kurs. ");
+        System.out.println("1. Lägg till kurs.  ");
         System.out.println("2. Ta bort kurs. ");
 
         int input = scan.nextInt();
