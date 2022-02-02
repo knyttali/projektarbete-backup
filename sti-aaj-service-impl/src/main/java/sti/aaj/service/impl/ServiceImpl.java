@@ -1,19 +1,18 @@
 package sti.aaj.service.impl;
 
 
-import jdk.internal.access.JavaIOFileDescriptorAccess;
 import sti.aaj.domain.Course;
 import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
-import sti.aaj.domain.Vault;
 import sti.aaj.service.StiService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ServiceImpl implements StiService {
-    static ArrayList<Student> students;
     static ArrayList<Course> courses;
+    static Teacher teacher1;
+    static Teacher teacher2;
+    static Teacher teacher3;
 
 
     public Course createCourse(int yhPoints, Teacher teacher, int courseId, int hours) {
@@ -26,11 +25,11 @@ public class ServiceImpl implements StiService {
     }
 
     @Override
-    private static ArrayList<Student> fillStudentList(){
+    public ArrayList<Course> fillCoursesList(){
 
-        students.add(new Student("Helena", "Östlund");
-        students.add(new Student("Max", "Lundin");
-        students.add(new Student("Anna", "Karlsson"));
-        return students;
+        courses.add(new Course("JavaA", 20, teacher1, 1, 160));
+        courses.add(new Course("JavaB", 25, teacher2, 2, 200));
+        courses.add(new Course("JavaScript", 20, teacher3, 3, 160));
+        return courses;
     }
 }
