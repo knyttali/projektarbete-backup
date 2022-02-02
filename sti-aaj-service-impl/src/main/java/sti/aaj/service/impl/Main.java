@@ -60,7 +60,7 @@ public class Main {
             stiService.addCourse(student, courseId);
         }
         if(input == 2){
-            System.out.println("Ta bort kurs ID(1010, 2020 eller 3030): ");
+            System.out.println("T bort kurs ID(1010, 2020 eller 3030): ");
             int courseId = scan.nextInt();
         }
     }
