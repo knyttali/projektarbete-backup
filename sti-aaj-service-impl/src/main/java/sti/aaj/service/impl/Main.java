@@ -3,6 +3,7 @@ package sti.aaj.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
 import sti.aaj.domain.Vault;
 import sti.aaj.service.StiService;
@@ -43,12 +44,11 @@ public class Main {
             }
         }
     }
-
     private static void getStudent(int id) {
 
         Scanner scan = new Scanner(System.in);
-
-        System.out.println(stiService.getStudent(id));
+        Student student = stiService.getStudent(id);
+        System.out.println(student);
         System.out.println("1. Lägg till kurs. ");
         System.out.println("2. Ta bort kurs. ");
 
@@ -57,7 +57,7 @@ public class Main {
         if(input == 1){
             System.out.println("Lägg till kurs ID(1010, 2020 eller 3030): ");
             int courseId = scan.nextInt();
-            stiService.addCourse(courseId);
+            stiService.addCourse(student, courseId);
         }
         if(input == 2){
             System.out.println("Ta bort kurs ID(1010, 2020 eller 3030): ");

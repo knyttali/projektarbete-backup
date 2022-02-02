@@ -11,5 +11,5 @@ public interface StiService {
     Student getStudent(int id);
     Student createStudent(int id, String name, String surname, int courseId);
 
-    void addCourse(int courseId);
+    void addCourse(Student student, int courseId);
 }
