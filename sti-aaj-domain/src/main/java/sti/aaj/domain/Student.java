@@ -12,10 +12,14 @@ public class Student extends Person{
 
     public Student(String name, String surname, int id, int courseId) {
 
+        this.courses = new ArrayList<>();
         this.name = name;
         this.surname = surname;
         this.id = id;
         this.courseId = courseId;
+    }
+
+    public Course setCourse(int courseId){
     }
 
     public String toString() {

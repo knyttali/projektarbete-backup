@@ -17,8 +17,9 @@ public class ServiceImpl implements StiService {
 
     public Course createCourse(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
 
-         Course course =  new Course("Tyska", yhPoints, teacher, courseId, hours);
-         vault.createCourse(course);
+
+        Course course =  new Course("Tyska", yhPoints, teacher, courseId, hours);
+        vault.createCourse(course);
 
         return course;
     }

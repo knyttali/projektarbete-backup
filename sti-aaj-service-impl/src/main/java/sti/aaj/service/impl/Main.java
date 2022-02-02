@@ -1,20 +1,21 @@
-package sti.aaj.service;
+package sti.aaj.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sti.aaj.domain.Teacher;
 import sti.aaj.domain.Vault;
+import sti.aaj.service.StiService;
+
 import java.util.Scanner;
 
 public class Main {
 
-    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");
-    private static StiService stiService;
+    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");;
+    private static StiService stiService = (StiService) applicationContext.getBean("service");;
 
     public static void main(String[] args) {
 
-        stiService = (StiService) applicationContext.getBean("service");
         stiService.createCourse("Tyska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 50);
         stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2030, 40);
         stiService.createCourse("Engelska", 15, new Teacher("Özgur", "Kibar", 567890, 10), 1010, 55);
@@ -44,7 +45,19 @@ public class Main {
     }
 
     private static void getStudent(int id) {
+
+        Scanner scan = new Scanner(System.in);
         stiService.getStudent(id);
+        System.out.println("1. Lägg till kurs. ");
+        System.out.println("2. Ta bort kurs. ");
+        int input = scan.nextInt();
+
+        if(input == 1){
+
+        }
+        if(input == 2){
+
+        }
     }
 
     private static void createStudent() {
@@ -64,5 +77,7 @@ public class Main {
         int courseId = scan.nextInt();
 
         stiService.createStudent(id, name, surname, courseId);
+
+        System.out.println(stiService.getStudent(id));
     }
 }

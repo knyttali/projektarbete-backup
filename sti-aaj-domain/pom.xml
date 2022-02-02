@@ -22,11 +22,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>se.sti</groupId>
-            <artifactId>sti-aaj-dao-impl</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
 
 

@@ -6,27 +6,21 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Vault {
-    private static ArrayList<Course> courses;
-    private static Map<Integer, Student> students;
+    private static ArrayList<Course> courses = new ArrayList<>();
+    private static Map<Integer, Student> students = new HashMap();
 
-    public static void run() {
 
-        courses = new ArrayList<>();
-        students = new HashMap();
-
-    }
-
-    public boolean createCourse(Course course){
+    public static boolean createCourse(Course course){
 
         return courses.add(course);
     }
 
-    public Student createStudent(int id, Student student) {
+    public static Student createStudent(int id, Student student) {
 
         return students.put(id, student);
     }
 
-    public Student getStudent(int id) {
+    public static Student getStudent(int id) {
 
         return students.get(id);
     }

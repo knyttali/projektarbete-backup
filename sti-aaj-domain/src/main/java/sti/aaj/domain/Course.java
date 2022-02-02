@@ -11,14 +11,14 @@ public class Course {
 
     public Course(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
 
-        setcourseName(courseName);
+        setCourseName(courseName);
         setCourseId(courseId);
         setHours(hours);
         setTeacher(teacher);
         setYhPoints(yhPoints);
     }
 
-    private void setcourseName(String courseName) {
+    private void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
