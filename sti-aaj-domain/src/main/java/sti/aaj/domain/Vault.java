@@ -1,5 +1,5 @@
 package sti.aaj.domain;
-
+import sti.aaj.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -18,8 +18,6 @@ public class Vault {
         courses.add(new Course("Engelska", 20, new Teacher("Stefan", "Holm", 123456, 15), 1010, 30));
 
         students.put(1234, new Student("Jonas", "Wadin",4567, courses));
-
-        System.out.println(courses);
 
         System.out.println("Write ID number: ");
         int id = scan.nextInt();
