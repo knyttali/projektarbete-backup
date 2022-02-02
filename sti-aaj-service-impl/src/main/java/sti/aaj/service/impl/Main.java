@@ -10,38 +10,44 @@ import sti.aaj.service.StiService;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen i service modulen. så vi la den här istället
 
-    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");;
-    private static StiService stiService = (StiService) applicationContext.getBean("service");;
+    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");
+    private static StiService stiService = (StiService) applicationContext.getBean("service");
 
     public static void main(String[] args) {
 
-        stiService.createCourse("Tyska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 50);
-        stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 3030, 40);
-        stiService.createCourse("Engelska", 15, new Teacher("Özgur", "Kibar", 567890, 10), 1010, 55);
+        stiService.createCourse("Tyska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 1010, 50);
+        stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 40);
+        stiService.createCourse("Engelska", 15, new Teacher("Özgur", "Kibar", 567890, 10), 3030, 55);
 
         Scanner scan = new Scanner(System.in);
 
         while(true){
-            System.out.println("------MENY-----");
-            System.out.println("1. Hämta student. ");
-            System.out.println("2. Lägg till student. ");
-            System.out.println("3. Stäng programmet. ");
 
-            int input = scan.nextInt();
+            try{
+                System.out.println("------MENY-----");
+                System.out.println("1. Hämta student. ");
+                System.out.println("2. Lägg till student. ");
+                System.out.println("3. Stäng programmet. ");
 
-            if(input == 1) {
-                System.out.println("Skriv ID nummer: ");
-                int id = scan.nextInt();
-                getStudent(id);
+                int input = scan.nextInt();
+
+                if(input == 1) {
+                    System.out.println("Skriv ID nummer: ");
+                    int id = scan.nextInt();
+                    getStudent(id);
+                }
+                else if (input == 2){
+                    createStudent();
+                }
+                else if (input == 3){
+                    break;
+                }
+            } catch (Exception e){
+                System.out.println("Something went wrong. Try again.");
             }
-            else if (input == 2){
-                createStudent();
-            }
-            else if (input == 3){
-                break;
-            }
+
         }
     }
 
