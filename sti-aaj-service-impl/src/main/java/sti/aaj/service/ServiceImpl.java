@@ -1,4 +1,4 @@
-package sti.aaj.service.impl;
+package sti.aaj.service;
 
 
 import sti.aaj.domain.Course;
@@ -38,8 +38,8 @@ public class ServiceImpl implements StiService {
     }
 
     @Override
-    public void addCourse(Student student, int courseId) throws NullPointerException{
-        student.setCourse(courseId);
+    public void setCourse(Student student, int courseId, int input) throws NullPointerException{
+        student.setCourse(courseId, input);
     }
 
 }

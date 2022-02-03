@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
         <!-- bean definitions here -->
-        <bean id="service" class="sti.aaj.service.impl.ServiceImpl">
+        <bean id="service" class="sti.aaj.service.ServiceImpl">
 
         </bean>
 </beans>

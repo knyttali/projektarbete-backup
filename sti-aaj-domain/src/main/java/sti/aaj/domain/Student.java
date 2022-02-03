@@ -10,19 +10,24 @@ public class Student extends Person{
         super(name, surname, id);
         this.courses = new ArrayList<>();
         this.courseId = courseId;
-        setCourse(courseId);
-    }
-    public Student(Student source){
-        super(source);
-        this.courses = new ArrayList<>();
-        this.courseId = source.courseId;
-        setCourse(source.courseId);
+        addCourse(courseId);
     }
 
-    public void setCourse(int courseId){
+    private void addCourse(int courseId) {
+
         courses.add(Vault.getCourse(courseId));
     }
 
+    public void setCourse(int courseId, int input){
+        if(input == 1){
+            addCourse(courseId);
+
+        }
+        else if (input == 2){
+            courses.remove(Vault.getCourse(courseId));
+
+        }
+    }
 
     public String toString() {
         StringBuilder courseName = new StringBuilder();
