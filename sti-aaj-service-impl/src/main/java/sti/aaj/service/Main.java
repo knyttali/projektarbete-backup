@@ -1,16 +1,15 @@
-package sti.aaj.service.impl;
+package sti.aaj.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
-import sti.aaj.service.StiService;
 
 import java.util.Scanner;
 
 public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen i service modulen. så vi la den här istället
 
-    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");
+    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service.xml");
     private static StiService stiService = (StiService) applicationContext.getBean("service");
 
     public static void main(String[] args) {
@@ -46,7 +45,6 @@ public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen
             } catch (Exception e){
                 System.out.println("Something went wrong. Try again.");
             }
-
         }
     }
 
@@ -89,6 +87,6 @@ public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen
         int courseId = scan.nextInt();
 
         stiService.createStudent(id, name, surname, courseId);
-        System.out.println("Student skapad: " + stiService.getStudent(id));
+        System.out.println(stiService.getStudent(id));
     }
 }

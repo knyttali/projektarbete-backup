@@ -33,4 +33,9 @@ public class Student extends Person{
         }
         return name + " " + surname + " " + courseName + "\n";
     }
+
+    public String getName() {
+
+        return name;
+    }
 }

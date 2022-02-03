@@ -1,4 +1,4 @@
-package sti.aaj.service.impl;
+package sti.aaj.service;
 
 
 import sti.aaj.domain.Course;
