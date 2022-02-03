@@ -39,6 +39,7 @@ public class ServiceImpl implements StiService {
 
     @Override
     public void addCourse(Student student, int courseId) throws NullPointerException{
+
         student.setCourse(courseId);
     }
 

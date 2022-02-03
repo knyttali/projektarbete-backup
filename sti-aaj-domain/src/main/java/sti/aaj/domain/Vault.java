@@ -9,8 +9,10 @@ public class Vault {
 
 
     public static Course createCourse(int courseId, Course course){
-
-        return courses.put(courseId, course);
+        if(!courses.containsValue(course)){
+            return courses.put(courseId, course);
+        }
+        return null;
     }
 
     public static Student createStudent(int id, Student student) {
@@ -20,7 +22,7 @@ public class Vault {
 
     public static Student getStudent(int id) {
         if (students.get(id) == null) {
-            throw new IllegalArgumentException("there is no such student");
+            throw new IllegalArgumentException("\nDet finns ingen student med detta id.\n");
         }
         return students.get(id);
     }

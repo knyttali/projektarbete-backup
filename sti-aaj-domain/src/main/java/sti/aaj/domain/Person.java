@@ -33,8 +33,8 @@ public class Person {
                 this.givenName = givenName;
     }
     public void setId(int id) {
-        if (Character.isWhitespace(id)) {
-            throw new IllegalArgumentException("id cannot be blank");
+        if(Character.isSpaceChar(id)){
+            throw new IllegalArgumentException("ID cannot be null/blank");
         }
         this.id = id;
     }
