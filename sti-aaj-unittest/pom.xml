@@ -36,9 +36,9 @@
             <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>compile</scope>
+            <groupId>se.sti</groupId>
+            <artifactId>sti-aaj-domain</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

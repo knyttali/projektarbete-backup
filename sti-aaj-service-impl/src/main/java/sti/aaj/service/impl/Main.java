@@ -1,11 +1,9 @@
 package sti.aaj.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
-import sti.aaj.domain.Vault;
 import sti.aaj.service.StiService;
 
 import java.util.Scanner;
@@ -20,6 +18,7 @@ public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen
         stiService.createCourse("Tyska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 1010, 50);
         stiService.createCourse("Svenska", 10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 40);
         stiService.createCourse("Engelska", 15, new Teacher("Özgur", "Kibar", 567890, 10), 3030, 55);
+        stiService.createStudent(10, "Anna", "Karlsson", 1010);
 
         Scanner scan = new Scanner(System.in);
 
@@ -90,7 +89,6 @@ public class Main { //Vi kunde inte få det att funka när vi hadde Main klassen
         int courseId = scan.nextInt();
 
         stiService.createStudent(id, name, surname, courseId);
-
-        System.out.println(stiService.getStudent(id));
+        System.out.println("Student skapad: " + stiService.getStudent(id));
     }
 }
