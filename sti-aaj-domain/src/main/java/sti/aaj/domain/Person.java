@@ -33,8 +33,8 @@ public class Person {
                 this.givenName = givenName;
     }
     public void setId(int id) {
-        if(Character.isSpaceChar(id)){
-            throw new IllegalArgumentException("ID cannot be null/blank");
+        if (Character.isAlphabetic(id)) {
+            throw new IllegalArgumentException("id cannot be blank");
         }
         this.id = id;
     }
@@ -56,5 +56,10 @@ public class Person {
 
     public void removeCourse(int courseId) {
         Vault.removeCourse(courseId);
+    }
+
+    public String getName() {
+
+        return givenName;
     }
 }
