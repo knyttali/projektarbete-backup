@@ -1,7 +1,6 @@
 package sti.aaj.domain;
 
 public class Course {
-
     private int yhPoints;
     private Teacher teacher;
     private int courseId;
@@ -10,7 +9,6 @@ public class Course {
 
 
     public Course(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
-
         setCourseName(courseName);
         setCourseId(courseId);
         setHours(hours);
@@ -18,8 +16,11 @@ public class Course {
         setYhPoints(yhPoints);
     }
 
-    private void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCourseName(String courseName) {
+        if(courseName == null || courseName.isEmpty()) {
+            throw new IllegalArgumentException("Course name cannot be null/blank");
+        }
+            this.courseName = courseName;
     }
 
     public void setCourseId(int courseId) {
@@ -31,7 +32,10 @@ public class Course {
     }
 
     public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+        if(teacher == null) {
+            throw new IllegalArgumentException("Teacher cannot be null/blank");
+        }
+            this.teacher = teacher;
     }
 
     public void setYhPoints(int yhPoints) {
@@ -43,7 +47,7 @@ public class Course {
     }
 
     public String toString(){
-        return "\n" + " course Name: " + courseName + " course ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getName() + " Timmar " + hours;
+        return "\n" + " course Name: " + courseName + " course ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getFullName() + " Timmar " + hours;
     }
 
 }

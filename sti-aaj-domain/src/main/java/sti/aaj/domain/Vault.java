@@ -19,12 +19,17 @@ public class Vault {
     }
 
     public static Student getStudent(int id) {
-
+        if (students.get(id) == null) {
+            throw new IllegalArgumentException("there is no such student");
+        }
         return students.get(id);
     }
 
     public static Course getCourse(int courseId) {
 
         return courses.get(courseId);
+    }
+    public static void removeCourse(int courseId){
+        courses.remove(courseId);
     }
 }

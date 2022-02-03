@@ -7,17 +7,12 @@ import sti.aaj.domain.Teacher;
 import sti.aaj.domain.Vault;
 import sti.aaj.service.StiService;
 
-import java.util.ArrayList;
-import java.util.Map;
-
 public class ServiceImpl implements StiService {
 
     private static Vault vault;
 
     public Course createCourse(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
-
-
-        Course course =  new Course("Tyska", yhPoints, teacher, courseId, hours);
+        Course course =  new Course(courseName, yhPoints, teacher, courseId, hours);
         vault.createCourse(courseId, course);
 
         return course;
@@ -43,7 +38,7 @@ public class ServiceImpl implements StiService {
     }
 
     @Override
-    public void addCourse(Student student, int courseId) {
+    public void addCourse(Student student, int courseId) throws NullPointerException{
         student.setCourse(courseId);
     }
 

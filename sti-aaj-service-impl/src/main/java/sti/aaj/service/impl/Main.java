@@ -3,6 +3,7 @@ package sti.aaj.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import sti.aaj.domain.Course;
 import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
 import sti.aaj.domain.Vault;
@@ -48,20 +49,33 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         Student student = stiService.getStudent(id);
-        System.out.println(student);
-        System.out.println("1. Lägg till kurs.   ");
-        System.out.println("2. Ta bort kurs. ");
+        while(true) {
+            System.out.println(student);
+            System.out.println("1. Lägg till kurs.   ");
+            System.out.println("2. Ta bort kurs. ");
+            System.out.println("3. Tillbaka till meny. ");
 
-        int input = scan.nextInt();
+            int input = scan.nextInt();
 
-        if(input == 1){
-            System.out.println("Lägg till kurs ID(1010, 2020 eller 3030): ");
-            int courseId = scan.nextInt();
-            stiService.addCourse(student, courseId);
-        }
-        if(input == 2){
-            System.out.println("T bort kurs ID(1010, 2020 eller 3030): ");
-            int courseId = scan.nextInt();
+            if (input == 1) {
+                System.out.println("Lägg till kurs ID(1010, 2020 eller 3030): ");
+                int courseId = scan.nextInt();
+                stiService.addCourse(student, courseId);
+            }
+            if (input == 2) {
+                System.out.println("Ta bort kurs ID(1010, 2020 eller 3030): ");
+                if(scan.hasNextInt()){
+                    int courseId = scan.nextInt();
+                    student.removeCourse(courseId);
+                } else {
+                    scan.nextLine();
+                    System.out.println("no such course.");
+                    continue;
+                }
+            }
+            if (input == 3) {
+                break;
+            }
         }
     }
 
