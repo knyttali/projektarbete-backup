@@ -1,29 +1,37 @@
 package sti.aaj.domain;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.Map;
 
 public class Vault {
+    private static Map<Integer, Course> courses = new HashMap();
+    private static Map<Integer, Student> students = new HashMap();
 
-        
-    public static void run() {
 
-        Scanner scan = new Scanner(System.in);
+    public static Course createCourse(int courseId, Course course){
+        if(!courses.containsValue(course)){
+            return courses.put(courseId, course);
+        }
+        return null;
+    }
 
-        ArrayList<Course> courses = new ArrayList<>();
-        HashMap<Integer, Student> students = new HashMap();
-        
-        courses.add(new Course("Svenska",10, new Teacher("Özgur", "Kibar", 567890, 10), 2020, 50));
-        courses.add(new Course("Engelska", 20, new Teacher("Stefan", "Holm", 123456, 15), 1010, 30));
+    public static Student createStudent(int id, Student student) {
 
-        students.put(1234, new Student("Jonas", "Wadin",4567, courses));
+        return students.put(id, student);
+    }
 
-        System.out.println(courses);
+    public static Student getStudent(int id) {
+        if (students.get(id) == null) {
+            throw new IllegalArgumentException("\nDet finns ingen student med detta id.\n");
+        }
+        return students.get(id);
+    }
 
-        System.out.println("Write ID number: ");
-        int id = scan.nextInt();
+    public static Course getCourse(int courseId) {
 
-        System.out.println(students.get(id));
+        return courses.get(courseId);
+    }
+    public static void removeCourse(int courseId){
+        courses.remove(courseId);
     }
 }

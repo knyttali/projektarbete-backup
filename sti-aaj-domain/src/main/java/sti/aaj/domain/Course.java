@@ -1,25 +1,26 @@
 package sti.aaj.domain;
 
 public class Course {
-
     private int yhPoints;
     private Teacher teacher;
     private int courseId;
     private int hours;
-    private String kursNamn;
+    private String courseName;
 
 
-    public Course(String kursNamn, int yhPoints, Teacher teacher, int courseId, int hours) {
-
-        setKursNamn(kursNamn);
+    public Course(String courseName, int yhPoints, Teacher teacher, int courseId, int hours) {
+        setCourseName(courseName);
         setCourseId(courseId);
         setHours(hours);
         setTeacher(teacher);
         setYhPoints(yhPoints);
     }
 
-    private void setKursNamn(String kursNamn) {
-        this.kursNamn = kursNamn;
+    public void setCourseName(String courseName) {
+        if(courseName == null || courseName.isEmpty()) {
+            throw new IllegalArgumentException("Course name cannot be null/blank");
+        }
+            this.courseName = courseName;
     }
 
     public void setCourseId(int courseId) {
@@ -31,35 +32,22 @@ public class Course {
     }
 
     public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+        if(teacher == null) {
+            throw new IllegalArgumentException("Teacher cannot be null/blank");
+        }
+            this.teacher = teacher;
     }
 
     public void setYhPoints(int yhPoints) {
         this.yhPoints = yhPoints;
     }
 
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public int getYhPoints() {
-        return yhPoints;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public String getKursNamn() {
-        return kursNamn;
+    public String getCourseName() {
+        return courseName;
     }
 
     public String toString(){
-        return "\n" + " Kurs namn: " + kursNamn + " Kurs ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getName() + " Timmar " + hours;
+        return "\n" + " course Name: " + courseName + " course ID: " + courseId + " YH poäng: " + yhPoints + " Lärare: " + teacher.getFullName() + " Timmar " + hours;
     }
 
 }
