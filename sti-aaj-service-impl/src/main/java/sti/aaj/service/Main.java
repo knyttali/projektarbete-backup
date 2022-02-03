@@ -1,15 +1,12 @@
 package sti.aaj.service;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import sti.aaj.domain.Course;
 import sti.aaj.domain.Student;
 import sti.aaj.domain.Teacher;
-import sti.aaj.domain.Vault;
-import sti.aaj.service.StiService;
+
 import java.util.Scanner;
 public class Main {
-    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service-impl.xml");;
+    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:sti-aaj-service.xml");;
     private static StiService stiService = (StiService) applicationContext.getBean("service");
 
     public static void main(String[] args) {
