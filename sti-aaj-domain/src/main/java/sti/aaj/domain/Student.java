@@ -29,7 +29,7 @@ public class Student extends Person{
         }
     }
 
-    public String toString() {
+    public String toString() {// mTODO: Förhindra dubletter av kurser.
         StringBuilder courseName = new StringBuilder();
         String komma = "";
         for (int i = 0; i < courses.size(); i++) {

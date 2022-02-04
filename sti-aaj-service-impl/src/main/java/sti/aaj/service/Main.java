@@ -15,7 +15,7 @@ public class Main {
         menu(scan);
     }
 
-    private static void menu(Scanner scan) {
+    private static void menu(Scanner scan) { // TODO: ta bort loop bugg när input är blank.
         while (true) {
             System.out.println("------MENY-----");
             System.out.println("1. Hämta student. ");
